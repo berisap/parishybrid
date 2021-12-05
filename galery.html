@@ -7,27 +7,97 @@
     <title>Paris Hybrid</title>
     <link rel="stylesheet" href="./css/style.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div class="header">
-        <h1><img src="images/Logos/Paris_Hybrid/Paris_Hybrid_Logo_02.png" alt="Paris Hybrid Logo"></h1>
+        <h1><img src="images/Logos/Paris_Hybrid_Logo_01_w.png" alt="Paris Hybrid Logo"></h1>
     </div>
     <nav class="closed">
         <a href="index.html" class="gone" id="home">HOME</a>
         <a href="team.html" class="gone" id="team">TEAM</a>
         <a href="sponsoring.html" class="gone" id="sponsoring">SPONSORING</a>
         <a href="galery.html" class="active" id="galery">GALERIE</a>
-        <a href="lastproject.html" class="gone" id="lastproject">LETZTES PROJEKT</a>
+        <a href="lastproject.html" class="gone" id="lastproject">LETZTJÄHRIGES PROJEKT</a>
         <a href="javascript:void(0);" class="icon" onclick="toggleNav()"><i class="fa fa-bars"></i></a>
     </nav>
-
+    <div class="index_top">
+        <canvas id="indexcanvas"></canvas>
+    </div>
     <div class="content">
         <div class="coming">
         <h1>COMING SOON...</h1>
         </div>
     </div>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <footer>
+        <div class="info">
+            <div class="address">
+                <h2>ADRESSE</h2>
+                <p>
+                    Inspire AG <br>
+                    Fokusprojekt Paris Hybrid <br>
+                    Technoparkstrasse 1 <br>
+                    CH-8005, Zürich
+                </p>
+            </div>
+            <div class="address">
+                <h2>SPONSORING TEAM</h2>
+                <p>
+                    Nick Staufer <a class="maillink" href="mailto:nstaufer@ethz.ch"><i class="fa fa-envelope"></i></a><br>
+                    Marc Dusanek <a class="maillink" href="mailto:mdusanek@ethz.ch"><i class="fa fa-envelope"></i></a>
+                </p>
+            </div>
+        </div>
+        <div class="social">
+            <a href="https://ch.linkedin.com/company/parishybrid" target="_blank"><i class="fa fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/padishybrid/?hl=de" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="mailto:parishybrid@ethz.ch"><i class="fa fa-envelope"></i></a>
+        </div>
+    </footer>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <script src="./js/script.js"></script>
+    <script>
+        function drawIndex() {
+            let ic = document.getElementById("indexcanvas");
+            let ctx = ic.getContext("2d");
+            for (let i = 0; i < ic.clientWidth; i++) {
+                ctx.beginPath();
+                ctx.fillStyle = "white";
+                ctx.fillRect(i, 40*Math.sin(i*0.01), 1, ic.clientHeight + 40*Math.sin(i*0.01));
+            }
+        }
+        drawIndex();
+
+        let news = document.querySelectorAll("div.articleSVG");
+        let btn = document.getElementById("btnMore");
+
+        news.forEach((n, i) => {
+            if (i == 0) {
+                n.style.display == "block";
+            } else {
+                n.style.display = "none";
+            }
+        });
+
+        function moreNews() {
+            if (btn.innerHTML == "Mehr") {
+                news.forEach((n, i) => {
+                    if (i > 0) {
+                        n.style.display = "block";
+                    }
+                });
+                btn.innerHTML = "Weniger";
+            } else {
+                news.forEach((n, i) => {
+                    if (i > 0) {
+                        n.style.display = "none";
+                    }
+                });
+                btn.innerHTML = "Mehr";
+            }
+        }
+        
+    </script>
 </body>
 </html>

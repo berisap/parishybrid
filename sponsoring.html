@@ -10,49 +10,37 @@
 </head>
 <body>
     <div class="header">
-        <h1><img src="images/Logos/Paris_Hybrid/Paris_Hybrid_Logo_02.png" alt="Paris Hybrid Logo"></h1>
+        <h1><img src="images/Logos/Paris_Hybrid_Logo_01_w.png" alt="Paris Hybrid Logo"></h1>
     </div>
     <nav class="closed">
         <a href="index.html" class="gone" id="home">HOME</a>
         <a href="team.html" class="gone" id="team">TEAM</a>
         <a href="sponsoring.html" class="active" id="sponsoring">SPONSORING</a>
-        <a href="galery.html" class="gone" id="galery">GALERIE</a>
-        <a href="lastproject.html" class="gone" id="lastproject">LETZTES PROJEKT</a>
+        <!--<a href="galery.html" class="gone" id="galery">GALERIE</a>-->
+        <a href="lastproject.html" class="gone" id="lastproject">LETZTJÄHRIGES PROJEKT</a>
         <a href="javascript:void(0);" class="icon" onclick="toggleNav()"><i class="fa fa-bars"></i></a>
     </nav>
-
+    <div class="index_top">
+        <canvas id="indexcanvas"></canvas>
+    </div>
     <div class="content">
         <h2>Partner</h2>
         <div class="sponsors">
-            <a href="https://eberhard.ch">
-                <img height="100" src="./images/Logos/Eberhard_logo.png" alt="Eberhard-Logo">
-            </a>
-            <a href="https://www.4qt.ch">
-                <img height="100" src="./images/Logos/4QT.png" alt="4QT-Logo">
-            </a>
-            <a href="https://www.iwf.mavt.ethz.ch">
-                <img height="100" src="./images/Logos/iwf.png" alt="IWF-Logo">
-            </a>
-            <a href="https://ethz.ch/de.html" class="logos eth">
-                <img src="./images/Logos/eth_logo_kurz_pos.png" alt="ETH-Logo">
-            </a>
-
+            <img height="100" src="./images/Logos/eth_logo_kurz_pos.png" alt="ETH-Logo">
+            <img height="100" src="./images/Logos/4QT.png" alt="4QT-Logo">
+            <img height="100" src="./images/Logos/iwf.png" alt="IWF-Logo">
+            <img height="100" src="./images/Logos/Eberhard.png" alt="IWF-Logo">
         </div>
-        <h2>Goldsponsoren</h2>
+        <h2>Sponsoren</h2>
         <div class="sponsors">
-            <h3 style="color:gray">Noch keine Goldsponsoren vorhanden</h3>
-        </div>
-        <h2>Silbersponsoren</h2>
-        <div class="sponsors">
-            <h3 style="color:gray">Noch keine Silbersponsoren vorhanden</h3>
-        </div>
-        <h2>Bronzesponsoren</h2>
-        <div class="sponsors">
-            <h3 style="color:gray">Noch keine Bronzesponsoren vorhanden</h3>
+            <img height="50" src="./images/Logos/NTK_Logo15_Grundlinie_RGB.jpg" alt="Notterkran">
+            <img height="50" src="./images/Logos/kisssoft.svg" alt="Kisssoft">
+            <img height="50" src="./images/Logos/helbling-logo.png" alt="Helbling">
         </div>
         <h2>Gönner</h2>
         <div class="goenner">
-            <h3 style="color: gray;">Noch keine Gönner</h3>
+            <h3>Victoriadruck AG</h3>
+            <h3>ZHAW 3D Experience</h3>
         </div>
         <div class="contact">
             <div class="side">
@@ -91,5 +79,47 @@
     </footer>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <script src="./js/script.js"></script>
+    <script>
+        function drawIndex() {
+            let ic = document.getElementById("indexcanvas");
+            let ctx = ic.getContext("2d");
+            for (let i = 0; i < ic.clientWidth; i++) {
+                ctx.beginPath();
+                ctx.fillStyle = "white";
+                ctx.fillRect(i, 40*Math.sin(i*0.01), 1, ic.clientHeight + 40*Math.sin(i*0.01));
+            }
+        }
+        drawIndex();
+
+        let news = document.querySelectorAll("div.articleSVG");
+        let btn = document.getElementById("btnMore");
+
+        news.forEach((n, i) => {
+            if (i == 0) {
+                n.style.display == "block";
+            } else {
+                n.style.display = "none";
+            }
+        });
+
+        function moreNews() {
+            if (btn.innerHTML == "Mehr") {
+                news.forEach((n, i) => {
+                    if (i > 0) {
+                        n.style.display = "block";
+                    }
+                });
+                btn.innerHTML = "Weniger";
+            } else {
+                news.forEach((n, i) => {
+                    if (i > 0) {
+                        n.style.display = "none";
+                    }
+                });
+                btn.innerHTML = "Mehr";
+            }
+        }
+        
+    </script>
 </body>
 </html>

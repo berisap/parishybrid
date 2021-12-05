@@ -7,18 +7,17 @@
     <title>Paris Hybrid</title>
     <link rel="stylesheet" href="./css/style.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div class="header">
-        <h1><img src="images/Logos/Paris_Hybrid/Paris_Hybrid_Logo_02.png" alt="Paris Hybrid Logo"></h1>
+        <h1><img src="images/Logos/Paris_Hybrid_Logo_01_w.png" alt="Paris Hybrid Logo"></h1>
     </div>
     <nav class="closed">
         <a href="index.html" class="gone" id="home">HOME</a>
         <a href="team.html" class="active" id="team">TEAM</a>
         <a href="sponsoring.html" class="gone" id="sponsoring">SPONSORING</a>
-        <a href="galery.html" class="gone" id="galery">GALERIE</a>
-        <a href="lastproject.html" class="gone" id="lastproject">LETZTES PROJEKT</a>
+        <!--<a href="galery.html" class="gone" id="galery">GALERIE</a>-->
+        <a href="lastproject.html" class="gone" id="lastproject">LETZTJÄHRIGES PROJEKT</a>
         <a href="javascript:void(0);" class="icon" onclick="toggleNav()"><i class="fa fa-bars"></i></a>
     </nav>
 
@@ -35,7 +34,6 @@
     </div>
     <div class="content even">
         <div class="flexBox">
-            <!--    <h1 style="text-align:center">Mech Team</h1>   -->
             <div class="flexItem">
                 <img class="portrait" src="./images/portraits/Portrait_Nick.jpg" alt="Nick">
                 <h3>Nick Staufer <br><span class="role">Teamleiter, Software & Regelung</span></h3>
@@ -49,7 +47,7 @@
             <div class="flexItem">
                 <img class="portrait" src="./images/portraits/Portrait_Wisnu.jpg" alt="Wisnu">
                 <h3>Wisnu Lang <br><span class="role">Mechanik Modulleiter</span></h3>
-                <a href="https://www.linkedin.com/in/wisnu-lang-822a14224/" target="_blank" class="linkedin">LinkedIn</a>
+                <br>
             </div>
             <div class="flexItem">
                 <img class="portrait" src="./images/portraits/Portrait_Remy.jpg" alt="Rémy">
@@ -58,7 +56,7 @@
             </div>
             <div class="flexItem">
                 <img class="portrait" src="./images/portraits/Portrait_Marc.jpg" alt="Marc">
-                <h3>Marc Dusanek <br><span class="role">Sponsoring Chef & Elektronik Modulleiter</span></h3>
+                <h3>Marc Dusanek <br><span class="role">Elektronik Modulleiter</span></h3>
                 <a href="https://www.linkedin.com/in/marc-dusanek-b53019224" target="_blank" class="linkedin">LinkedIn</a>
             </div>
             <div class="flexItem">
@@ -78,6 +76,34 @@
             </div>
         </div>
     </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <footer>
+        <div class="info">
+            <div class="address">
+                <h2>ADRESSE</h2>
+                <p>
+                    Inspire AG <br>
+                    Fokusprojekt Paris Hybrid <br>
+                    Technoparkstrasse 1 <br>
+                    CH-8005, Zürich
+                </p>
+            </div>
+            <div class="address">
+                <h2>SPONSORING TEAM</h2>
+                <p>
+                    Nick Staufer <a class="maillink" href="mailto:nstaufer@ethz.ch"><i class="fa fa-envelope"></i></a><br>
+                    Marc Dusanek <a class="maillink" href="mailto:mdusanek@ethz.ch"><i class="fa fa-envelope"></i></a>
+                </p>
+            </div>
+        </div>
+        <div class="social">
+            <a href="https://ch.linkedin.com/company/parishybrid" target="_blank"><i class="fa fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/padishybrid/?hl=de" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="mailto:parishybrid@ethz.ch"><i class="fa fa-envelope"></i></a>
+        </div>
+    </footer>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <script>
         function draw(x) {
             let canvas = document.getElementById("teamcanvas");

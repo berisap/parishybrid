@@ -1,5 +1,5 @@
 function toggleNav() {
-    let items = ["home", "team", "sponsoring", "galery", "lastproject"];
+    let items = ["home", "team", "sponsoring", "lastproject"];
     let elements = [];
     let nav = document.querySelector("nav");
 
